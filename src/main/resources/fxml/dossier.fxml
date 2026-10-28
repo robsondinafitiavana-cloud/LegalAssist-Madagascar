@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    ============================================================
+    GESTION DES DOSSIERS (dossier.fxml)
+    ============================================================
+    Relié à DossierController.java.
+    Contient un formulaire d'ajout + un tableau (TableView)
+    affichant tous les dossiers.
+    ============================================================
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="20" styleClass="page" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.legalassist.controller.DossierController">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Gestion des dossiers juridiques" styleClass="titre-principal"/>
+
+    <!-- Formulaire d'ajout -->
+    <VBox spacing="8" styleClass="carte-formulaire">
+        <Label text="Ajouter un nouveau dossier" styleClass="label-stat-titre"/>
+
+        <HBox spacing="10">
+            <TextField fx:id="champNumero" promptText="Numéro (ex: DOS-2026-001)"/>
+            <TextField fx:id="champTitre" promptText="Titre du dossier"/>
+            <ComboBox fx:id="comboCategorie" promptText="Catégorie juridique"/>
+        </HBox>
+
+        <TextArea fx:id="champDescription" promptText="Description de l'affaire" prefRowCount="3"/>
+
+        <Button text="Ajouter le dossier" onAction="#ajouterDossier" styleClass="bouton-principal"/>
+        <Label fx:id="labelMessage" styleClass="label-message"/>
+    </VBox>
+
+    <!-- Recherche -->
+    <HBox spacing="10">
+        <TextField fx:id="champRecherche" promptText="Rechercher un dossier..." HBox.hgrow="ALWAYS"/>
+        <Button text="Rechercher" onAction="#rechercherDossiers"/>
+        <Button text="Archiver la sélection" onAction="#archiverDossierSelectionne" styleClass="bouton-secondaire"/>
+    </HBox>
+
+    <!-- Tableau des dossiers -->
+    <TableView fx:id="tableDossiers" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colNumero" text="Numéro" prefWidth="120"/>
+            <TableColumn fx:id="colTitre" text="Titre" prefWidth="220"/>
+            <TableColumn fx:id="colCategorie" text="Catégorie" prefWidth="180"/>
+            <TableColumn fx:id="colStatut" text="Statut" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+</VBox>

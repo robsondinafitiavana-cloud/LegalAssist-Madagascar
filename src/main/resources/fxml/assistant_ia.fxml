@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    ============================================================
+    ASSISTANT IA (assistant_ia.fxml)
+    ============================================================
+    Relié à IAController.java. Permet de saisir la description
+    d'une affaire, de lancer l'analyse IA locale et d'exporter
+    le rapport en PDF.
+    ============================================================
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="20" styleClass="page" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.legalassist.controller.IAController">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Assistant IA - Préparation d'audience" styleClass="titre-principal"/>
+    <Label text="Décrivez l'affaire ci-dessous : l'IA locale identifie le domaine juridique et les articles de loi correspondants."
+           wrapText="true" styleClass="sous-titre"/>
+
+    <TextField fx:id="champNumeroDossier" promptText="Numéro de dossier (optionnel)"/>
+
+    <TextArea fx:id="champDescriptionAffaire" promptText="Ex : Mon client possède un terrain mais une autre personne réclame la propriété."
+              prefRowCount="5"/>
+
+    <HBox spacing="10">
+        <Button text="Analyser avec l'IA" onAction="#analyserAvecIA" styleClass="bouton-principal"/>
+        <Button text="Exporter en PDF" onAction="#exporterPDF" styleClass="bouton-secondaire"/>
+    </HBox>
+
+    <Label fx:id="labelMessage" styleClass="label-message"/>
+
+    <Label text="Résultat de l'analyse :" styleClass="label-stat-titre"/>
+    <TextArea fx:id="zoneResultatAnalyse" editable="false" wrapText="true" prefRowCount="12" VBox.vgrow="ALWAYS"/>
+
+</VBox>

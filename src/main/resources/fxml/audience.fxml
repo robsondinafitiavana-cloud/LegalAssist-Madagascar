@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- GESTION DES AUDIENCES (audience.fxml) - relie a AudienceController.java -->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="20" styleClass="page" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.legalassist.controller.AudienceController">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Gestion des audiences" styleClass="titre-principal"/>
+
+    <!-- Formulaire de planification -->
+    <VBox spacing="8" styleClass="carte-formulaire">
+        <Label text="Planifier une audience" styleClass="label-stat-titre"/>
+
+        <HBox spacing="10">
+            <ComboBox fx:id="comboDossier" promptText="Choisir le dossier" HBox.hgrow="ALWAYS"/>
+            <DatePicker fx:id="champDateAudience" promptText="Date de l'audience"/>
+        </HBox>
+
+        <HBox spacing="10">
+            <TextField fx:id="champLieu" promptText="Lieu (ex: Tribunal d'Antananarivo)" HBox.hgrow="ALWAYS"/>
+        </HBox>
+
+        <HBox spacing="10">
+            <TextField fx:id="champDemandeur" promptText="Demandeur" HBox.hgrow="ALWAYS"/>
+            <TextField fx:id="champDefendeur" promptText="Défendeur" HBox.hgrow="ALWAYS"/>
+        </HBox>
+
+        <TextArea fx:id="champNotes" promptText="Notes complémentaires" prefRowCount="3"/>
+
+        <Button text="Planifier l'audience" onAction="#ajouterAudience" styleClass="bouton-principal"/>
+        <Label fx:id="labelMessage" styleClass="label-message"/>
+    </VBox>
+
+    <!-- Tableau des audiences -->
+    <HBox spacing="10">
+        <Label text="Audiences planifiées :" styleClass="label-stat-titre" HBox.hgrow="ALWAYS"/>
+        <Button text="Supprimer la sélection" onAction="#supprimerAudienceSelectionnee" styleClass="bouton-secondaire"/>
+    </HBox>
+
+    <TableView fx:id="tableAudiences" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colDossier" text="Dossier" prefWidth="220"/>
+            <TableColumn fx:id="colDate" text="Date" prefWidth="100"/>
+            <TableColumn fx:id="colLieu" text="Lieu" prefWidth="180"/>
+            <TableColumn fx:id="colDemandeur" text="Demandeur" prefWidth="130"/>
+            <TableColumn fx:id="colDefendeur" text="Défendeur" prefWidth="130"/>
+        </columns>
+    </TableView>
+
+</VBox>

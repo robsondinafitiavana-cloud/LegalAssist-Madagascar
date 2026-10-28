@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ENTRAINEMENT IA (entrainement_ia.fxml) - relie a EntrainementIAController.java -->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="20" styleClass="page" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.legalassist.controller.EntrainementIAController">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Entraînement de l'IA" styleClass="titre-principal"/>
+    <Label text="Réservé à l'administrateur : enrichis le dictionnaire de mots-clés utilisé par l'Assistant IA. Tout ce que tu ajoutes ici est enregistré définitivement, même après fermeture de l'application."
+           wrapText="true" styleClass="sous-titre"/>
+
+    <!-- Ajout manuel d'un exemple -->
+    <VBox spacing="8" styleClass="carte-formulaire">
+        <Label text="Ajouter un exemple manuellement" styleClass="label-stat-titre"/>
+
+        <HBox spacing="10">
+            <TextField fx:id="champTexteExemple" promptText="Ex : licenciement sans preavis" HBox.hgrow="ALWAYS"/>
+            <ComboBox fx:id="comboCategorieExemple" promptText="Catégorie juridique"/>
+        </HBox>
+
+        <Button text="Ajouter cet exemple" onAction="#ajouterExemple" styleClass="bouton-principal"/>
+        <Label fx:id="labelMessageExemple" styleClass="label-message"/>
+    </VBox>
+
+    <!-- Import CSV -->
+    <VBox spacing="8" styleClass="carte-formulaire">
+        <Label text="Importer un fichier CSV (texte,categorie)" styleClass="label-stat-titre"/>
+        <Label text="Le fichier training_data.csv fourni avec le projet se trouve dans src/main/resources/models/"
+               wrapText="true" styleClass="sous-titre"/>
+
+        <Button text="Charger un fichier CSV" onAction="#chargerFichierCSV" styleClass="bouton-principal"/>
+        <Label fx:id="labelMessageCSV" styleClass="label-message"/>
+    </VBox>
+
+    <!-- Statistiques -->
+    <Label text="État actuel de l'IA :" styleClass="label-stat-titre"/>
+    <TextArea fx:id="zoneStatistiques" editable="false" wrapText="true" prefRowCount="10" VBox.vgrow="ALWAYS"/>
+
+</VBox>

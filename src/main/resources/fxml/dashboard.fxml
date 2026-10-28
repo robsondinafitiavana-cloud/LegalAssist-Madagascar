@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    TABLEAU DE BORD (dashboard.fxml)
+    Relie a DashboardController.java. Ecran "d'accueil" charge
+    par defaut dans la zone de contenu du layout principal.
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="25" styleClass="page" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.legalassist.controller.DashboardController">
+
+    <padding>
+        <Insets top="30" right="35" bottom="30" left="35"/>
+    </padding>
+
+    <VBox spacing="4">
+        <Label fx:id="labelBienvenue" styleClass="titre-principal"/>
+        <Label text="Voici un aperçu de votre activité." styleClass="sous-titre"/>
+    </VBox>
+
+    <HBox spacing="20">
+        <VBox styleClass="carte-stat" spacing="6">
+            <Label text="📁" styleClass="carte-stat-icone"/>
+            <Label fx:id="labelNombreDossiers" styleClass="label-stat-valeur"/>
+            <Label text="Dossiers enregistrés" styleClass="label-stat-titre"/>
+        </VBox>
+
+        <VBox styleClass="carte-stat" spacing="6">
+            <Label text="📖" styleClass="carte-stat-icone"/>
+            <Label fx:id="labelNombreLois" styleClass="label-stat-valeur"/>
+            <Label text="Lois enregistrées" styleClass="label-stat-titre"/>
+        </VBox>
+
+        <VBox styleClass="carte-stat" spacing="6">
+            <Label text="🗓" styleClass="carte-stat-icone"/>
+            <Label fx:id="labelNombreAudiences" styleClass="label-stat-valeur"/>
+            <Label text="Audiences planifiées" styleClass="label-stat-titre"/>
+        </VBox>
+
+        <Region HBox.hgrow="ALWAYS"/>
+    </HBox>
+
+    <VBox styleClass="carte-formulaire" spacing="8">
+        <Label text="À propos de l'IA locale" styleClass="label-stat-titre"/>
+        <Label text="Cet assistant analyse vos descriptions d'affaires hors ligne, identifie le domaine juridique probable et propose des articles de loi correspondants. Il reste un outil d'aide à la décision : la responsabilité finale revient toujours au juge ou à l'avocat."
+               wrapText="true" styleClass="sous-titre"/>
+    </VBox>
+
+</VBox>

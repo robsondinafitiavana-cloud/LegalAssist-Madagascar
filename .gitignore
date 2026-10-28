@@ -1,0 +1,24 @@
+﻿# Fichiers compiles par Maven
+target/
+build/
+
+# Fichiers temporaires et journaux
+*.log
+*.tmp
+hs_err_pid*
+
+# Configuration locale et secrets
+.env
+.env.*
+!.env.example
+config.local.properties
+
+# Fichiers IDE
+.idea/
+*.iml
+.vscode/
+nbproject/private/
+
+# Systeme d'exploitation
+.DS_Store
+Thumbs.db

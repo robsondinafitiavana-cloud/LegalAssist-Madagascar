@@ -1,0 +1,310 @@
+/* ============================================================
+   FEUILLE DE STYLE GLOBALE - LegalAssist Madagascar AI
+   ============================================================
+   Palette demandee : "Clay Brown" + "Soft Butter"
+     - Clay brown (couleur principale, sombre)  : #6B352A
+     - Soft butter (couleur d'accent, claire)    : #FFF1AB
+
+   Comme seulement 2 couleurs ont ete fournies, quelques
+   variantes (plus claires/plus foncees) ont ete derivees de
+   CES DEUX couleurs pour creer de la profondeur (ombres,
+   survols, degrades) sans jamais sortir de la famille de
+   teintes demandee. Le fond general n'est volontairement PAS
+   en plein "soft butter" (une trop grande surface en jaune
+   pale fatiguerait les yeux) : c'est un creme tres clair,
+   presque blanc, qui reprend juste une pointe de butter.
+
+   Couleurs derivees :
+     - Clay brown fonce (hover, degrades)  : #532922
+     - Clay brown tres fonce (texte)       : #3A1D17
+     - Butter fonce (hover sur accent)     : #F2DE7E
+     - Fond general (creme tres clair)     : #FBF6EA
+     - Texte secondaire (brun attenue)     : #8A6E63
+   ============================================================ */
+
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-background-color: #FBF6EA;
+}
+
+/* ===================== SIDEBAR ===================== */
+
+.sidebar {
+    -fx-background-color: linear-gradient(to bottom, #6B352A, #532922);
+}
+
+.sidebar-entete {
+    -fx-padding: 36 0 30 0;
+    -fx-alignment: CENTER;
+    -fx-spacing: 3;
+}
+
+.sidebar-logo {
+    -fx-font-size: 32px;
+    -fx-text-fill: #e08f16;
+    -fx-padding: 0 0 8 0;
+}
+
+.sidebar-titre {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFBEF;
+}
+
+.sidebar-sous-titre {
+    -fx-font-size: 10px;
+    -fx-text-fill: #E4BEB2;
+    -fx-letter-spacing: 1px;
+}
+
+.sidebar-nav {
+    -fx-padding: 10 0 18 0;
+}
+
+.nav-bouton {
+    -fx-background-color: transparent;
+    -fx-text-fill: #EAD3CB;
+    -fx-font-size: 13px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 13 24 13 24;
+    -fx-pref-width: 230;
+    -fx-background-radius: 0;
+    -fx-cursor: hand;
+}
+
+.nav-bouton:hover {
+    -fx-background-color: #7C3F32;
+    -fx-text-fill: #FFFBEF;
+}
+
+.nav-bouton-actif {
+    -fx-background-color: #7C3F32;
+    -fx-text-fill: #FFF1AB;
+    -fx-font-weight: bold;
+    -fx-border-color: transparent transparent transparent #FFF1AB;
+    -fx-border-width: 0 0 0 4;
+}
+
+.sidebar-utilisateur {
+    -fx-padding: 16 20 22 20;
+    -fx-spacing: 10;
+    -fx-border-color: #7C3F32 transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+}
+
+.sidebar-utilisateur-nom {
+    -fx-text-fill: #E4BEB2;
+    -fx-font-size: 11px;
+}
+
+.nav-bouton-deconnexion {
+    -fx-background-color: #532922;
+    -fx-text-fill: #FFFBEF;
+    -fx-font-size: 12px;
+    -fx-padding: 8 14 8 14;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-pref-width: 190;
+}
+
+.nav-bouton-deconnexion:hover {
+    -fx-background-color: #8B3A2A;
+    -fx-text-fill: white;
+}
+
+/* ===================== ZONE DE CONTENU ===================== */
+
+.zone-contenu {
+    -fx-background-color: #FBF6EA;
+}
+
+.page {
+    -fx-background-color: transparent;
+}
+
+/* ===================== TYPOGRAPHIE ===================== */
+/* Le texte principal est en brun tres fonce (#3A1D17) plutot
+   que noir pur : garde la coherence de la palette, tout en
+   restant tres lisible (contraste eleve sur fond clair). */
+
+.titre-principal {
+    -fx-font-size: 23px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3A1D17;
+}
+
+.sous-titre {
+    -fx-font-size: 12.5px;
+    -fx-text-fill: #8A6E63;
+}
+
+.label-champ {
+    -fx-font-size: 11px;
+    -fx-text-fill: #8A6E63;
+    -fx-font-weight: bold;
+}
+
+/* ===================== BOUTONS ===================== */
+
+.bouton-principal {
+    -fx-background-color: linear-gradient(to bottom, #6B352A, #532922);
+    -fx-text-fill: #FFF1AB;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 10 22 10 22;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+
+.bouton-principal:hover {
+    -fx-background-color: linear-gradient(to bottom, #7C3F32, #6B352A);
+}
+
+.bouton-secondaire {
+    -fx-background-color: #FFF1AB;
+    -fx-text-fill: #3A1D17;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 10 18 10 18;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+    -fx-border-color: #F2DE7E;
+    -fx-border-radius: 6;
+    -fx-border-width: 1;
+}
+
+.bouton-secondaire:hover {
+    -fx-background-color: #F2DE7E;
+}
+
+/* ===================== MESSAGES ===================== */
+
+.label-erreur {
+    -fx-text-fill: #A13D2B;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+.label-message {
+    -fx-text-fill: #4B6B3A;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+/* ===================== CARTES ===================== */
+
+.carte-formulaire {
+    -fx-background-color: white;
+    -fx-padding: 20;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(107,53,42,0.14), 14, 0, 0, 4);
+    -fx-border-color: #F3E9DD;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+}
+
+/* Cartes statistiques : liseret colore a gauche (brun par defaut).
+   Variantes disponibles pour alterner les couleurs sur le tableau
+   de bord : ajouter "carte-stat-butter" ou "carte-stat-brun-clair"
+   en plus de "carte-stat" dans le styleClass du FXML. */
+.carte-stat {
+    -fx-background-color: white;
+    -fx-padding: 20 26 20 22;
+    -fx-background-radius: 10;
+    -fx-pref-width: 210;
+    -fx-effect: dropshadow(gaussian, rgba(107,53,42,0.14), 14, 0, 0, 4);
+    -fx-border-color: transparent transparent transparent #6B352A;
+    -fx-border-width: 0 0 0 4;
+}
+
+.carte-stat-butter {
+    -fx-border-color: transparent transparent transparent #E8C64A;
+}
+
+.carte-stat-brun-clair {
+    -fx-border-color: transparent transparent transparent #A9695A;
+}
+
+.carte-stat-icone {
+    -fx-font-size: 20px;
+}
+
+.label-stat-titre {
+    -fx-font-size: 12px;
+    -fx-text-fill: #8A6E63;
+}
+
+.label-stat-valeur {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3A1D17;
+}
+
+/* ===================== CHAMPS DE SAISIE ===================== */
+
+.text-field, .text-area, .combo-box, .date-picker, TextField, TextArea, ComboBox, DatePicker {
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-color: #E4D6C8;
+    -fx-border-width: 1;
+    -fx-font-size: 13px;
+    -fx-text-fill: #3A1D17;
+}
+
+.text-field:focused, .text-area:focused, .combo-box:focused, .date-picker:focused {
+    -fx-border-color: #6B352A;
+}
+
+/* ===================== TABLEAUX ===================== */
+
+.table-view {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-color: #F3E9DD;
+    -fx-border-radius: 8;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #6B352A;
+    -fx-background-radius: 8 8 0 0;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: transparent;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFF1AB;
+}
+
+.table-view .table-cell {
+    -fx-text-fill: #3A1D17;
+}
+
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #F3E9DD transparent;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #FFF1AB;
+}
+
+.table-row-cell:selected .table-cell {
+    -fx-text-fill: #3A1D17;
+}
+
+/* ===================== ECRAN DE CONNEXION ===================== */
+
+.fond-login {
+    -fx-background-color: linear-gradient(to bottom right, #3A1D17, #6B352A 55%, #8B5648);
+}
+
+.carte-login {
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.35), 30, 0, 0, 12);
+}
+
+.login-logo {
+    -fx-font-size: 36px;
+    -fx-text-fill: #6B352A;
+}
